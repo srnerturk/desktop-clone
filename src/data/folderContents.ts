@@ -85,11 +85,11 @@ export const DEFAULT_CONTENTS: { [key: string]: FolderContent } = {
       },
       {
         id: 'song-3',
-        name: 'The Beatles - Hey Jude',
+        name: '100. yıl marşı',
         type: 'music',
         icon: music,
-        artist: 'The Beatles',
-        youtubeId: 'A_MjCqQoLLA',
+        artist: 'Kıraç',
+        youtubeId: 'NJ2TkBrWA04',
         modifiedDate: '03.04.2024'
       }
     ]
