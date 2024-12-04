@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-image: url('https://cdn.wallpaperhub.app/cloudcache/9/8/1/e/8/e/981e8e91f90c93bf5e715527e1922724645f1214.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+.desktop-icon {
+  @apply flex flex-col items-center justify-center p-2 cursor-pointer text-white hover:bg-white/10 rounded;
+  width: 80px;
+  text-align: center;
+  user-select: none;
+}
+
+.desktop-icon.selected {
+  @apply bg-white/20;
+}
+
+.desktop-icon.selected span {
+  @apply bg-blue-500;
+}
+
+.desktop-icon img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 4px;
+}
+
+.desktop-icon span {
+  font-size: 12px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  padding: 0 4px;
+}
