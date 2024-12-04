@@ -38,3 +38,34 @@ A React-based Windows-like desktop environment built with TypeScript and Tailwin
 1. Clone the repository:
 
 ```bash
+git clone https://github.com/yourusername/windows-ui.git
+cd windows-ui
+```
+
+2. Install dependencies:
+
+```bash
+bun install
+```
+
+3. Development:
+
+```bash
+bun dev
+```
+
+4. Build for production:
+
+```bash
+bun build
+```
+
+The development server will start at `http://localhost:5173`
+
+## License
+
+This project is licensed under the MIT License.
+
+## Author
+
+@serhanerturk
