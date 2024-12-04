@@ -31,7 +31,7 @@ const NotePad = ({ onClose, isMinimized, onMinimize }: NotePadProps) => {
       disabled={isMaximized}
       handle=".window-header"
       position={isMaximized ? { x: 0, y: 0 } : position}
-      onStop={(e, data) => !isMaximized && setPosition({ x: data.x, y: data.y })}
+      onStop={(_, data) => !isMaximized && setPosition({ x: data.x, y: data.y })}
       bounds="parent"
     >
       <div

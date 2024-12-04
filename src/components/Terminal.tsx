@@ -13,7 +13,7 @@ interface Command {
   output: string;
 }
 
-const Terminal = ({ onClose, isMinimized, onMinimize }: TerminalProps) => {
+const Terminal = ({ onClose, onMinimize }: TerminalProps) => {
   const [commands, setCommands] = useState<Command[]>([]);
   const [currentInput, setCurrentInput] = useState('');
   const [isMaximized, setIsMaximized] = useState(false);

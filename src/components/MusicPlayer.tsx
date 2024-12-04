@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { FolderItem } from '@/types/folder';
 import WindowControls from './WindowControls';
 

@@ -8,7 +8,7 @@ interface DoomGameProps {
   onMinimize: () => void;
 }
 
-const DoomGame = ({ onClose, isMinimized, onMinimize }: DoomGameProps) => {
+const DoomGame = ({ onClose, onMinimize }: DoomGameProps) => {
   const [isMaximized, setIsMaximized] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -23,7 +23,7 @@ const DoomGame = ({ onClose, isMinimized, onMinimize }: DoomGameProps) => {
       disabled={isMaximized}
       handle=".window-header"
       position={isMaximized ? { x: 0, y: 0 } : position}
-      onStop={(e, data) => !isMaximized && setPosition({ x: data.x, y: data.y })}
+      onStop={(_, data) => !isMaximized && setPosition({ x: data.x, y: data.y })}
       bounds="parent"
     >
       <div

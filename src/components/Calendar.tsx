@@ -71,7 +71,7 @@ const Calendar = ({ onClose, initialPosition, isMinimized }: CalendarProps) => {
     <Draggable
       handle=".window-header"
       position={position}
-      onStop={(e, data) => setPosition({ x: data.x, y: data.y })}
+      onStop={(_, data) => setPosition({ x: data.x, y: data.y })}
       bounds="parent"
     >
       <div className="absolute bg-white rounded-lg shadow-lg overflow-hidden w-[300px]">

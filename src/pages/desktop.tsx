@@ -9,11 +9,10 @@ import NotePad from '@/components/NotePad'
 
 import pc from '@/assets/icons/pc.webp'
 import user from '@/assets/icons/user.webp'
-import music from '@/assets/icons/music.webp'
 import terminal from '@/assets/icons/xterm.webp'
 import doom from '@/assets/icons/doom.webp'
 import notepad from '@/assets/icons/notepad.webp'
-import { ACTIVE_CONTENTS, createNewFolder } from '@/data/folderContents'
+import { ACTIVE_CONTENTS } from '@/data/folderContents'
 
 interface FolderWindow {
   id: string;
@@ -96,13 +95,6 @@ const Desktop = () => {
     setContextMenu(null);
   }, []);
 
-  const handleNewFolder = useCallback(() => {
-    const newFolder = createNewFolder('desktop');
-    if (newFolder) {
-      handleOpenFolder(newFolder.name, newFolder.id);
-    }
-    handleCloseContextMenu();
-  }, []);
 
   const handleRefresh = useCallback(() => {
     // Yenileme işlemleri burada yapılabilir

@@ -20,7 +20,7 @@ const DesktopIcon = ({
 }: DesktopIconProps) => {
   const [position, setPosition] = useState(initialPosition);
 
-  const handleDragStop = (e: any, data: { x: number; y: number }) => {
+  const handleDragStop = (_: any, data: { x: number; y: number }) => {
     setPosition({ x: data.x, y: data.y });
   };
 
