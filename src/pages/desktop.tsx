@@ -274,6 +274,18 @@ const Desktop = () => {
             onMinimize={() => setIsNotepadMinimized(true)}
           />
         )}
+
+        {/* Watermark */}
+        <div className="fixed bottom-12 right-4 text-white/30 font-semibold select-none pointer-events-none">
+          <a 
+            href="https://github.com/serhanerturk" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-white/50 transition-colors"
+          >
+            @serhanerturk
+          </a>
+        </div>
       </div>
       <TaskBar 
         openWindows={getOpenWindows()}

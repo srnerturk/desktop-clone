@@ -14,6 +14,7 @@ interface TaskBarProps {
 const TaskBar = ({ openWindows, onWindowClick }: TaskBarProps) => {
   const [isStartMenuOpen, setIsStartMenuOpen] = useState(false);
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  const [isCalendarMinimized, setIsCalendarMinimized] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
@@ -23,6 +24,15 @@ const TaskBar = ({ openWindows, onWindowClick }: TaskBarProps) => {
 
     return () => clearInterval(timer);
   }, []);
+
+  const handleCalendarClick = () => {
+    if (isCalendarOpen) {
+      setIsCalendarMinimized(!isCalendarMinimized);
+    } else {
+      setIsCalendarOpen(true);
+      setIsCalendarMinimized(false);
+    }
+  };
 
   return (
     <div className="fixed bottom-0 left-0 right-0 h-10 bg-[#202020] flex items-center px-2 z-50">
@@ -50,7 +60,7 @@ const TaskBar = ({ openWindows, onWindowClick }: TaskBarProps) => {
       </div>
 
       <button
-        onClick={() => setIsCalendarOpen(!isCalendarOpen)}
+        onClick={handleCalendarClick}
         className="text-white text-sm px-3 hover:bg-white/10 h-full flex items-center"
       >
         {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
@@ -60,6 +70,7 @@ const TaskBar = ({ openWindows, onWindowClick }: TaskBarProps) => {
       {isCalendarOpen && (
         <Calendar 
           onClose={() => setIsCalendarOpen(false)}
+          isMinimized={isCalendarMinimized}
           initialPosition={{ 
             x: window.innerWidth - 320, 
             y: window.innerHeight - 450 

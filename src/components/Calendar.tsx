@@ -5,9 +5,10 @@ import WindowControls from './WindowControls';
 interface CalendarProps {
   onClose: () => void;
   initialPosition?: { x: number; y: number };
+  isMinimized?: boolean;
 }
 
-const Calendar = ({ onClose, initialPosition }: CalendarProps) => {
+const Calendar = ({ onClose, initialPosition, isMinimized }: CalendarProps) => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [position, setPosition] = useState(initialPosition || { x: 0, y: 0 });
   const [isMaximized, setIsMaximized] = useState(false);
@@ -63,6 +64,8 @@ const Calendar = ({ onClose, initialPosition }: CalendarProps) => {
     }
     return days;
   };
+
+  if (isMinimized) return null;
 
   return (
     <Draggable
